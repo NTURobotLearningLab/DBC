@@ -1,0 +1,488 @@
+- title: 'Hierarchical Programmatic Reinforcement Learning via Learning to Compose Programs'
+  date:  'Jan 2023'
+  imgurl: '/images/projects/hprl.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Guan-Ting Liu
+      equal_contribution: true
+    - name: En-Pei Hu
+      equal_contribution: true
+    - name: Pu-Jen Cheng
+      url:  'https://www.csie.ntu.edu.tw/~pjcheng/'
+    - name: Hung-Yi Lee
+      url:  'https://speech.ee.ntu.edu.tw/~hylee/index.php'
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+  desc: 'We re-formulate solving a reinforcement learning task as synthesizing a task-solving program that can be executed to interact with the environment and maximize the return. We first learn a program embedding space that continuously parameterizes a diverse set of programs sampled from a program dataset. Then, we train a meta-policy, whose action space is the learned program embedding space, to produce a series of programs (i.e., predict a series of actions) to yield a composed task-solving program.'
+  abstract: 'Aiming to produce reinforcement learning (RL) policies that are human-interpretable and can generalize better to novel scenarios, Trivedi et al. (2021) present a method (LEAPS) that first learns a program embedding space to continuously parameterize diverse programs from a pre-generated program dataset, and then searches for a task-solving program in the learned program embedding space when given a task. Despite encouraging results, the program policies that LEAPS can produce are limited by the distribution of the program dataset. Furthermore, during searching, LEAPS evaluates each candidate program solely based on its return, failing to precisely reward correct parts of programs and penalize incorrect parts. To address these issues, we propose to learn a meta-policy that composes a series of programs sampled from the learned program embedding space. By composing programs, our proposed method can produce program policies that describe out-of-distributionally complex behaviors and directly assign credits to programs that induce desired behaviors. We design and conduct extensive experiments in the Karel domain. The experimental results show that our proposed framework outperforms baselines. The ablation studies confirm the limitations of LEAPS and justify our design choices.'
+  tags:
+    - name: 'Paper'
+      url:  'https://arxiv.org/abs/2301.12950'
+    - name: 'Bibtex'
+      url:  '/bibtex/hprl.txt'
+  publisher:  'International Conference on Machine Learning (ICML) 2023'
+  oral: false
+  oral_text: ''
+  status:   ''
+
+- title: 'Diffusion Model-Augmented Behavioral Cloning'
+  date:  'Feb 2023'
+  imgurl: '/images/projects/dbc.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Hsiang-Chun Wang
+    - name: Shang-Fu Chen
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+  desc: 'This work aims to augment BC by employing diffusion models for modeling expert behaviors, and designing a learning objective that leverages learned diffusion models to guide policy learning. To this end, we propose diffusion model-augmented behavioral cloning (Diffusion-BC) that combines our proposed diffusion model guided learning objective with the BC objective, which complements each other. Our proposed method outperforms baselines or achieves competitive performance in various continuous control domains, including navigation, robot arm manipulation, and locomotion.'
+  abstract: 'Imitation learning addresses the challenge of learning by observing an expert demonstrations without access to reward signals from the environment. Behavioral cloning (BC) formulates imitation learning as a supervised learning problem and learns from sampled state-action pairs. Despite its simplicity, it often fails to capture the temporal structure of the task and the global information of expert demonstrations. This work aims to augment BC by employing diffusion models for modeling expert behaviors, and designing a learning objective that leverages learned diffusion models to guide policy learning. To this end, we propose diffusion model-augmented behavioral cloning (Diffusion-BC) that combines our proposed diffusion model guided learning objective with the BC objective, which complements each other. Our proposed method outperforms baselines or achieves competitive performance in various continuous control domains, including navigation, robot arm manipulation, and locomotion. Ablation studies justify our design choices and investigate the effect of balancing the BC and our proposed diffusion model objective.'
+  tags:
+    - name: 'Paper'
+      url:  'https://arxiv.org/abs/2302.13335'
+    - name: 'Project Page'
+      url:  'https://nturobotlearninglab.github.io/dbc/'
+    - name: 'Bibtex'
+      url:  '/bibtex/dbc.txt'
+  publisher:  'arXiv preprint'
+  oral: false
+  oral_text: ''
+  status:   ''
+
+- title: 'Hierarchical Neural Program Synthesis'
+  date:  'Mar 2023'
+  imgurl: '/images/projects/hnps.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Linghan Zhong
+      url:  'https://thoughtp0lice.github.io/'
+    - name: Ryan Lindeborg
+      url:  'https://www.ryanlindeborg.com/'
+    - name: Jesse Zhang
+      url:  'https://jesbu1.github.io/'
+    - name: Joseph J. Lim
+      url:  'https://clvrai.com/web_lim/'
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+  desc: 'Recent works in program synthesis have demonstrated encouraging results in a variety of domains such as string transformation, tensor manipulation, and describing behaviors of embodied agents. Most existing program synthesis methods are designed to synthesize programs from scratch, generating a program token by token, line by line. This fundamentally prevents these methods from scaling up to synthesize programs that are longer or more complex. In this work, we present a scalable program synthesis framework that instead synthesizes a program by hierarchically composing programs.'
+  abstract: 'Recent works in program synthesis have demonstrated encouraging results in a variety of domains such as string transformation, tensor manipulation, and describing behaviors of embodied agents. Most existing program synthesis methods are designed to synthesize programs from scratch, generating a program token by token, line by line. This fundamentally prevents these methods from scaling up to synthesize programs that are longer or more complex. In this work, we present a scalable program synthesis framework that instead synthesizes a program by hierarchically composing programs. The experimental results demonstrate that the proposed framework can synthesize programs that are significantly longer and more complex than the programs considered in prior program synthesis works.'
+  tags:
+    - name: 'Paper'
+      url:  'http://arxiv.org/abs/2303.06018'
+    - name: 'Bibtex'
+      url:  '/bibtex/hnps.txt'
+    - name: 'Project Page'
+      url:  'https://thoughtp0lice.github.io/hnps_web/'
+  publisher:  'arXiv preprint'
+  oral: false
+  oral_text: ''
+  status:   ''
+
+- title: 'Efficient Multi-Task Reinforcement Learning via Selective Behavior Sharing'
+  date:  'Dec 2022'
+  imgurl: '/images/projects/qmp.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Grace Zhang
+      url: 'https://gracehzhang.github.io/'
+    - name: Ayush Jain
+      url:  'https://ayushj240.github.io/'
+    - name: Injune Hwang
+      url:  'https://hij0527.github.io/'
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+    - name: Joseph J. Lim
+      url:  'http://www-bcf.usc.edu/~limjj/'
+  desc: 'We propose a multi-task reinforcement learning method, Q-switch Mixture of policies (QMP), that can share exploratory behavior, which can be helpful even when the optimal behaviors differ. Furthermore, as we learn each task, we can guide the exploration by sharing behaviors in a task and state dependent way. QMP learns to selectively share exploratory behavior between tasks by using a mixture of policies based on estimated discounted returns to gather training data. '
+  abstract: 'The ability to leverage shared behaviors between tasks is critical for sample efficient multi-task reinforcement learning (MTRL). Prior approaches based on parameter sharing or policy distillation share behaviors uniformly across tasks and states or focus on learning one optimal policy. Therefore, they are fundamentally limited when tasks have conflicting behaviors because no one optimal policy exists. Our key insight is that we can instead share exploratory behavior which can be helpful even when the optimal behaviors differ. Furthermore, as we learn each task, we can guide the exploration by sharing behaviors in a task and state dependent way. To this end, we propose a novel MTRL method, Q-switch Mixture of policies (QMP), that learns to selectively share exploratory behavior between tasks by using a mixture of policies based on estimated discounted returns to gather training data. Experimental results in manipulation and locomotion tasks demonstrate that our method outperforms prior behavior sharing methods, high- lighting the importance of task and state dependent sharing.'
+  tags:
+    - name: 'Paper'
+      url:  'https://arxiv.org/abs/2302.00671'
+    - name: 'Project Page'
+      url:  'https://sites.google.com/view/qmp-mtrl'
+    - name: 'OpenReview'
+      url:  'https://openreview.net/forum?id=U3n8WPtKPm'
+    - name: 'Bibtex'
+      url:  '/bibtex/qmp.txt'
+  publisher:  'Deep RL Workshop at Neural Information Processing Systems (NeurIPS) 2022'
+  oral: false
+  oral_text: ''
+  status:   ''
+
+- title: 'Skill-based Meta-Reinforcement Learning'
+  date:  'Dec 2021'
+  imgurl: '/images/projects/simpl.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Taewook Nam
+      url: 'https://www.mlai-kaist.com/people'
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+    - name: Karl Pertsch
+      url:  'https://kpertsch.github.io/'
+    - name: Sung Ju Hwang
+      url:  'http://www.sungjuhwang.com/'
+    - name: Joseph J. Lim
+      url:  'http://www-bcf.usc.edu/~limjj/'
+  desc: 'We devise a method that enables meta-learning on long-horizon, sparse-reward tasks, allowing us to solve unseen target tasks with orders of magnitude fewer environment interactions. Specifically, we propose to (1) extract reusable skills and a skill prior from offline datasets, (2) meta-train a high-level policy that learns to efficiently compose learned skills into long-horizon behaviors, and (3) rapidly adapt the meta-trained policy to solve an unseen target task.'
+  abstract: 'While deep reinforcement learning methods have shown impressive results in robot learning, their sample inefficiency makes the learning of complex, long-horizon behaviors with real robot systems infeasible. To mitigate this issue, meta-reinforcement learning methods aim to enable fast learning on novel tasks by learning how to learn. Yet, the application has been limited to short-horizon tasks with dense rewards. To enable learning long-horizon behaviors, recent works have explored leveraging prior experience in the form of offline datasets without reward or task annotations. While these approaches yield improved sample efficiency, millions of interactions with environments are still required to solve complex tasks. In this work, we devise a method that enables meta-learning on long-horizon, sparse-reward tasks, allowing us to solve unseen target tasks with orders of magnitude fewer environment interactions. Our core idea is to leverage prior experience extracted from offline datasets during meta-learning. Specifically, we propose to (1) extract reusable skills and a skill prior from offline datasets, (2) meta-train a high-level policy that learns to efficiently compose learned skills into long-horizon behaviors, and (3) rapidly adapt the meta-trained policy to solve an unseen target task. Experimental results on continuous control tasks in navigation and manipulation demonstrate that the proposed method can efficiently solve long-horizon novel target tasks by combining the strengths of meta-learning and the usage of offline datasets, while prior approaches in RL, meta-RL, and multi-task RL require substantially more environment interactions to solve the tasks.'
+  tags:
+    - name: 'Paper'
+      url:  'https://openreview.net/pdf?id=jeLW-Fh9bV'
+    - name: 'Project Page'
+      url:  'https://namsan96.github.io/SiMPL/'
+    - name: 'Code'
+      url:  'https://github.com/namsan96/simpl'
+    - name: 'OpenReview'
+      url:  'https://openreview.net/forum?id=jeLW-Fh9bV'
+    - name: 'Bibtex'
+      url:  '/bibtex/simpl.txt'
+  publisher:  'International Conference on Learning Representations (ICLR) 2022'
+  oral: false
+  oral_text: ''
+  status:   ''
+- title: 'Learning to Synthesize Programs as Interpretable and Generalizable Policies'
+  date:  'Aug 2021'
+  imgurl: '/images/projects/leaps.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Dweep Trivedi
+      equal_contribution: true
+    - name: Jesse Zhang
+      url:  'https://jesbu1.github.io/'
+      equal_contribution: true
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+    - name: Joseph J. Lim
+      url:  'http://www-bcf.usc.edu/~limjj/'
+  desc: 'We present a framework that learns to synthesize a program, detailing the procedure to solve a task in a flexible and expressive manner, solely from reward signals. To alleviate the difficulty of learning to compose programs to induce the desired agent behavior from scratch, we propose to learn a program embedding space that continuously parameterizes diverse behaviors in an unsupervised manner and then search over the learned program embedding space to yield a program that maximizes the return for a given task.'
+  abstract: 'Recently, deep reinforcement learning (DRL) methods have achieved impressive performance on tasks in a variety of domains. However, neural network poli- cies produced with DRL methods are not human-interpretable and often have difficulty generalizing to novel scenarios. To address these issues, prior works explore learning programmatic policies that are more interpretable and structured for generalization. Yet, these works either employ limited policy representations (e.g. decision trees, state machines, or predefined program templates) or require stronger supervision (e.g. input/output state pairs or expert demonstrations). We present a framework that instead learns to synthesize a program, which details the procedure to solve a task in a flexible and expressive manner, solely from reward signals. To alleviate the difficulty of learning to compose programs to induce the desired agent behavior from scratch, we propose to first learn a program embedding space that continuously parameterizes diverse behaviors in an unsupervised manner and then search over the learned program embedding space to yield a program that maximizes the return for a given task. Experimental results demonstrate that the proposed framework not only learns to reliably synthesize task-solving pro- grams but also outperforms DRL and program synthesis baselines while producing interpretable and more generalizable policies. We also justify the necessity of the proposed two-stage learning scheme as well as analyze various methods for learning the program embedding.'
+  tags:
+    - name: 'Paper'
+      url:  'https://arxiv.org/abs/2108.13643'
+    - name: 'Project Page'
+      url:  'https://clvrai.github.io/leaps/'
+    - name: 'Code'
+      url:  'https://github.com/clvrai/leaps'
+    - name: 'Slide'
+      url:  './images/slides/leaps.pdf'
+    - name: 'Bibtex'
+      url:  '/bibtex/leaps.txt'
+  publisher:  'Neural Information Processing Systems (NeurIPS) 2021'
+  oral: false
+  oral_text: ''
+  status:   ''
+    
+- title: 'Generalizable Imitation Learning from Observation via Inferring Goal Proximity'
+  date:  'Aug 2021'
+  imgurl: '/images/projects/goal.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Youngwoon Lee
+      url:  'http://youngwoon.github.io/'
+    - name: Andrew Szot
+      url:  'https://www.andrewszot.com/'
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+    - name: Joseph J. Lim
+      url:  'http://www-bcf.usc.edu/~limjj/'
+  desc: 'Task progress is intuitive and readily available task information that can guide an agent closer to the desired goal. Furthermore, a progress estimator can generalize to new situations. From this intuition, we propose a simple yet effective imitation learning from observation method for a goal-directed task using a learned goal proximity function as a task progress estimator, for better generalization to unseen states and goals. We obtain this goal proximity function from expert demonstrations and online agent experience, and then use the learned goal proximity as a dense reward for policy training.' 
+  abstract: 'Task progress is intuitive and readily available task information that can guide an agent closer to the desired goal. Furthermore, a progress estimator can generalize to new situations. From this intuition, we propose a simple yet effective imitation learning from observation method for a goal-directed task using a learned goal proximity function as a task progress estimator, for better generalization to unseen states and goals. We obtain this goal proximity function from expert demonstrations and online agent experience, and then use the learned goal proximity as a dense reward for policy training. We demonstrate that our proposed method can robustly generalize compared to prior imitation learning methods on a set of goal-directed tasks in navigation, locomotion, and robotic manipulation, even with demonstrations that cover only a part of the states.'
+  tags:
+    - name: 'Paper'
+      url: 'https://papers.nips.cc/paper/2021/hash/868b7df964b1af24c8c0a9e43a330c6a-Abstract.html'
+    - name: 'Project Page'
+      url:  'https://clvrai.github.io/goal_prox_il/'
+    - name: 'Code'
+      url:  'https://github.com/clvrai/goal_prox_il'
+    - name: 'Slide'
+      url:  '/images/slides/goal_proximity.pdf'
+    - name: 'Bibtex'
+      url:  '/bibtex/goal.txt'
+  publisher:  'Neural Information Processing Systems (NeurIPS) 2021'
+  oral: false
+  oral_text: ''
+  status:   ''
+
+- title: 'Program Guided Agent'
+  date:  'Apr 2020'
+  imgurl: '/images/projects/pga.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+    - name: Te-Lin Wu
+    - name: Joseph J. Lim
+      url:  'http://www-bcf.usc.edu/~limjj/'
+  desc: 'We propose to utilize programs, structured in a formal language, as a precise and expressive way to specify tasks, instead of natural languages which can often be ambiguous. We then devise a modular framework that learns to perform a task specified by a program – as different circumstances give rise to diverse ways to accomplish the task, our framework can perceive which circumstance it is currently under, and instruct a multitask policy accordingly to fulfill each subtask of the overall task.'
+  abstract: 'Developing agents that can learn to follow natural language instructions has been an emerging research direction. While being accessible and flexible, natural language instructions can sometimes be ambiguous even to humans. To address this, we propose to utilize programs, structured in a formal language, as a precise and expressive way to specify tasks. We then devise a modular framework that learns to perform a task specified by a program – as different circumstances give rise to diverse ways to accomplish the task, our framework can perceive which circumstance it is currently under, and instruct a multitask policy accordingly to fulfill each subtask of the overall task. Experimental results on a 2D Minecraft environment not only demonstrate that the proposed framework learns to reliably accomplish program instructions and achieves zero-shot generalization to more complex instructions but also verify the efficiency of the proposed modulation mechanism for learning the multitask policy. We also conduct an analysis comparing various models which learn from programs and natural language instructions in an end-to-end fashion.'
+  tags:
+    - name: 'Paper'
+      url:  'https://openreview.net/pdf?id=BkxUvnEYDH'
+    - name: 'Project Page'
+      url:  'https://shaohua0116.github.io/ProgramGuidedAgent/'
+    - name: 'OpenReview'
+      url:  'https://openreview.net/forum?id=BkxUvnEYDH'
+    - name: 'Slide'
+      url:  './images/slides/pga.pdf'
+    - name: 'Bibtex'
+      url:  '/bibtex/pga.txt'
+  publisher:  'International Conference on Learning Representations (ICLR) 2020'
+  oral: true 
+  oral_text: 'Spotlight'
+  status:   ''
+ 
+- title: 'Multimodal Model-Agnostic Meta-Learning via Task-Aware Modulation'
+  date:  'Dec 2019'
+  imgurl: '/images/projects/mmaml.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Risto Vuorio
+      url:  'https://vuoristo.github.io/'
+      equal_contribution: true
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+      equal_contribution: true
+    - name: Hexiang Hu
+      url:  'http://hexianghu.com/'
+    - name: Joseph J. Lim
+      url:  'http://www-bcf.usc.edu/~limjj/'
+  desc: 'Model-agnostic meta-learners aim to acquire meta-prior parameters from a distribution of tasks and adapt to novel tasks with few gradient updates. Yet, seeking a common initialization shared across the entire task distribution substantially limits the diversity of the task distributions that they are able to learn from. We propose a multimodal MAML (MMAML) framework, which is able to modulate its meta-learned prior according to the identified mode, allowing more efficient fast adaptation.'
+  abstract: 'Model-agnostic meta-learners aim to acquire meta-prior parameters from similar tasks to adapt to novel tasks from the same distribution with few gradient updates. With the flexibility in the choice of models, those frameworks demonstrate appealing performance on a variety of domains such as few-shot image classification and reinforcement learning. However, one important limitation of such frameworks is that they seek a common initialization shared across the entire task distribution, substantially limiting the diversity of the task distributions that they are able to learn from. In this paper, we augment MAML with the capability to identify the mode of tasks sampled from a multimodal task distribution and adapt quickly through gradient updates. Specifically, we propose a multimodal MAML (MMAML) framework, which is able to modulate its meta-learned prior according to the identified mode, allowing more efficient fast adaptation. We evaluate the proposed model on a diverse set of few-shot learning tasks, including regression, image classification, and reinforcement learning. The results not only demonstrate the effectiveness of our model in modulating the meta-learned prior in response to the characteristics of tasks but also show that learning from a multimodal distribution could benefit learning the tasks from a single mode.'
+  tags:
+    - name: 'Paper'
+      url:  'http://papers.nips.cc/paper/8296-multimodal-model-agnostic-meta-learning-via-task-aware-modulation'
+    - name: 'Project Page'
+      url:  'https://vuoristo.github.io/MMAML/'
+    - name: 'Code'
+      url:  'https://github.com/shaohua0116/MMAML-Classification'
+    - name: 'Poster'
+      url:  './images/posters/mmaml.pdf'
+    - name: 'Spotlight Slide'
+      url:  './images/slides/mmaml.pdf'
+    - name: 'Spotlight Talk'
+      url:  'https://slideslive.com/38921753/track-3-session-4'
+    - name: 'Bibtex'
+      url:  '/bibtex/mmaml.txt'
+  publisher:  'Neural Information Processing Systems (NeurIPS) 2019'
+  oral: true 
+  oral_text: 'Spotlight'
+  status:   ''
+  # place:    'in Vancouver, Canada'
+ 
+- title: 'Feedback Adversarial Learning: Spatial Feedback for Improving Generative Adversarial Networks'
+  date:  'June 2019'
+  imgurl: '/images/projects/fal.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Minyoung Huh
+      url:  'http://minyounghuh.com/'
+      equal_contribution: true
+    - name: Shao-Hua Sun
+      url:  ''
+      equal_contribution: true
+      me: true
+    - name: Ning Zhang
+      url:  'https://people.eecs.berkeley.edu/~nzhang/'
+  desc: 'We propose feedback adversarial learning (FAL) framework that can improve existing generative adversarial networks by leveraging spatial feedback from the discriminator. We formulate the generation task as a recurrent framework, in which the generator conditions on the discriminator spatial output response and its previous generation to improve generation quality over time - allowing the generator to attend and fix its previous mistakes. <!--more--> To effectively utilize the feedback, we propose an adaptive spatial transform (AST) layer, which learns to spatially modulate feature maps from its previous generation and the feedback signal from the discriminator.'
+  abstract: 'We propose feedback adversarial learning (FAL) framework that can improve existing generative adversarial networks by leveraging spatial feedback from the discriminator. We formulate the generation task as a recurrent framework, in which the discriminator feedback is integrated into the feedforward path of the generation process. Specifically, the generator conditions on the discriminator spatial output response and its previous generation to improve generation quality over time -- allowing the generator to attend and fix its previous mistakes. %%% technical contribution To effectively utilize the feedback, we propose an adaptive spatial transform (AST) layer, which learns to spatially modulate feature maps from its previous generation and the feedback signal from the discriminator. We demonstrate that one can easily adapt our method to improve existing adversarial learning frameworks on a wide range of tasks, including image generation, image-to-image translation, and voxel generation.'
+  tags:
+    - name: 'Paper'
+      url:  'http://openaccess.thecvf.com/content_CVPR_2019/html/Huh_Feedback_Adversarial_Learning_Spatial_Feedback_for_Improving_Generative_Adversarial_Networks_CVPR_2019_paper.html'
+    - name: 'Poster'
+      url:  './images/posters/fal.pdf'
+    - name: 'Bibtex'
+      url:  '/bibtex/fal.txt'
+  publisher:  'IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2019'
+  oral: false
+  oral_text: ''
+  status:   ''
+  # place:    'in Long Beach, California, USA'
+ 
+- title: 'Composing Complex Skills by Learning Transition Policies'
+  date:  'May 2019'
+  imgurl: '/images/projects/transition.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Youngwoon Lee
+      url:  'http://youngwoon.github.io/'
+      equal_contribution: true
+    - name: Shao-Hua Sun
+      url:  ''
+      equal_contribution: true
+      me: true
+    - name: Sriram Somasundaram
+      url:  'http://srirams32.github.io/'
+    - name: Edward Hu
+      url:  'https://edwardshu.com/'
+    - name: Joseph J. Lim
+      url:  'http://www-bcf.usc.edu/~limjj/'
+  desc: 'Humans acquire complex skills by exploiting previously learned skills and making transitions between them. To empower machines with this ability, we propose a method that can learn transition policies which effectively connect primitive skills to perform sequential tasks without handcrafted rewards. To efficiently train our transition policies, we introduce proximity predictors which induce rewards gauging proximity to suitable initial states for the next skill. <!--more--> The proposed method is evaluated on a set of complex continuous control tasks in bipedal locomotion and robotic arm manipulation which traditional methods struggle at.'
+  abstract: 'Humans acquire complex skills by exploiting previously learned skills and making transitions between them. To empower machines with this ability, we propose a method that can learn transition policies which effectively connect primitive skills to perform sequential tasks without handcrafted rewards. To efficiently train our transition policies, we introduce proximity predictors which induce rewards gauging proximity to suitable initial states for the next skill. The proposed method is evaluated on a set of complex continuous control tasks in bipedal locomotion and robotic arm manipulation which traditional policy gradient methods struggle at. We demonstrate that transition policies enable us to effectively compose complex skills with existing primitive skills. The proposed induced rewards computed using the proximity predictor further improve training efficiency by providing more dense information than the sparse rewards from the environments.'
+  tags:
+    - name: 'Paper'
+      url:  'https://openreview.net/pdf?id=rygrBhC5tQ'
+    - name: 'Project Page'
+      url:  'https://youngwoon.github.io/transition/'
+    - name: 'Code'
+      url:  'https://github.com/youngwoon/transition'
+    - name: 'OpenReview'
+      url:  'https://openreview.net/forum?id=rygrBhC5tQ'
+    - name: 'Slide'
+      url:  './images/slides/transition.pdf'
+    - name: 'Poster'
+      url:  './images/posters/transition.pdf'
+    - name: 'Bibtex'
+      url:  '/bibtex/transition.txt'
+  publisher:  'International Conference on Learning Representations (ICLR) 2019'
+  oral: false
+  oral_text: ''
+  status:   ''
+  # place:    'in New Orleans, USA'
+    
+- title: 'Toward Multimodal Model-Agnostic Meta-Learning'
+  date:  'Dec 2018'
+  imgurl: '/images/projects/mumomaml.png'
+  imgprop: 'frame'
+  selected: false
+  authors:
+    - name: Risto Vuorio
+      url:  'https://vuoristo.github.io/'
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+    - name: Hexiang Hu
+      url:  'http://hexianghu.com/'
+    - name: Joseph J. Lim
+      url:  'http://www-bcf.usc.edu/~limjj/'
+  desc: 'Model-agnostic meta-learners aim to acquire meta-prior parameters from a distribution of tasks and adapt to novel tasks with few gradient updates. Yet, seeking a common initialization shared across the entire task distribution substantially limits the diversity of the task distributions that they are able to learn from. We propose a multimodal MAML (MMAML) framework, which is able to modulate its meta-learned prior according to the identified mode, allowing more efficient fast adaptation.'
+  abstract: 'Model-agnostic meta-learners aim to acquire meta-prior parameters from similar tasks to adapt to novel tasks from the same distribution with few gradient updates. With the flexibility in the choice of models, those frameworks demonstrate appealing performance on a variety of domains such as few-shot image classification and reinforcement learning. However, one important limitation of such frameworks is that they seek a common initialization shared across the entire task distribution, substantially limiting the diversity of the task distributions that they are able to learn from. In this paper, we augment MAML with the capability to identify the mode of tasks sampled from a multimodal task distribution and adapt quickly through gradient updates. Specifically, we propose a multimodal MAML (MMAML) framework, which is able to modulate its meta-learned prior according to the identified mode, allowing more efficient fast adaptation. We evaluate the proposed model on a diverse set of few-shot learning tasks, including regression, image classification, and reinforcement learning. The results not only demonstrate the effectiveness of our model in modulating the meta-learned prior in response to the characteristics of tasks but also show that learning from a multimodal distribution could benefit learning the tasks from a single mode.'
+  tags:
+    - name: 'Paper'
+      url:  'https://arxiv.org/abs/1812.07172'
+    - name: 'Code'
+      url:  'https://github.com/shaohua0116/MMAML-Classification'
+    - name: 'Bibtex'
+      url:  '/bibtex/mumomaml.txt'
+  publisher:  'Meta-Learning Workshop at Neural Information Processing Systems (NeurIPS) 2018'
+  oral: false
+  oral_text: ''
+  status:   ''
+  # place:    'in Vancouver, Canada'
+      
+- title: 'Multi-view to Novel View: Synthesizing Novel Views with Self-Learned Confidence'
+  date:  'Sep. 2018'
+  imgurl: '/images/projects/view.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+    - name: Minyoung Huh
+      url:  'http://minyounghuh.com/'
+    - name: Yuan-Hong Liao
+      url:  'https://andrewliao11.github.io/'
+    - name: Ning Zhang
+      url:  'https://people.eecs.berkeley.edu/~nzhang/'
+    - name: Joseph J. Lim
+      url:  'http://www-bcf.usc.edu/~limjj/'
+  publisher:  'European Conference on Computer Vision (ECCV) 2018'
+  oral: false
+  oral_text: ''
+  status:   ''
+  # place:    'in Munich, Germany'
+  desc: 'We aim to synthesize a target image with an arbitrary camera pose from multipple given source images. We propose an end-to-end trainable framework which consists of a flow prediction module and a pixel generation module to directly leverage information presented in source views as well as hallucinate missing pixels from statistical priors. We introduce a self-learned confidence aggregation mechanism to merge the predictions produced by the two modules given multi-view source images.'
+  abstract: 'We address the task of multi-view novel view synthesis, where we are interested in synthesizing a target image with an arbitrary camera pose from given source images. We propose an end-to-end trainable framework that learns to exploit multiple viewpoints to synthesize a novel view without any 3D supervision. Specifically, our model consists of a flow prediction module and a pixel generation module to directly leverage information presented in source views as well as hallucinate missing pixels from statistical priors. To merge the predictions produced by the two modules given multi-view source images, we introduce a self-learned confidence aggregation mechanism. We evaluate our model on images rendered from 3D object models as well as real and synthesized scenes. We demonstrate that our model is able to achieve state-of-the-art results as well as progressively improve its predictions when more source images are available.'
+  tags:
+    - name: 'Paper'
+      url:  'https://shaohua0116.github.io/Multiview2Novelview/sun2018multiview.pdf'
+    - name: 'Project Page'
+      url:  'https://shaohua0116.github.io/Multiview2Novelview'
+    - name: 'Code'
+      url:  'https://github.com/shaohua0116/Multiview2Novelview'
+    - name: 'Poster'
+      url:  './images/posters/view.pdf'
+    - name: 'Bibtex'
+      url:  '/bibtex/multiview.txt'
+
+- title: 'Neural Program Synthesis from Diverse Demonstration Videos'
+  date:  'Jul. 2018'
+  imgurl: '/images/projects/demo2program.png'
+  imgprop: 'frame'
+  selected: true
+  authors:
+    - name: Shao-Hua Sun
+      url:  ''
+      equal_contribution: true
+      me: true
+    - name: Hyeonwoo Noh
+      url:  'http://cvlab.postech.ac.kr/~hyeonwoonoh/'
+      equal_contribution: true
+    - name: Sriram Somasundaram
+      url:  'http://srirams32.github.io/'
+    - name: Joseph J. Lim
+      url:  'http://www-bcf.usc.edu/~limjj/'
+  publisher:  'International Conference on Machine Learning (ICML) 2018'
+  status:   ''
+  # place:    'in Stockholm, Sweden'
+  desc: 'Interpreting decision making logic in demonstration videos is key to collaborating with and mimicking humans. To empower machines with this ability, we propose a framework that is able to explicitly synthesize underlying programs from behaviorally diverse and visually complicated demonstration videos. We introduce a summarizer module to improve the network’s ability to integrate multiple demonstrations and employ a multi-task objective to encourage the model to learn meaningful intermediate representations.'
+  abstract: 'Interpreting decision making logic in demonstration videos is key to collaborating with and mimicking humans. To empower machines with this ability, we propose a neural program synthesizer that is able to explicitly synthesize underlying programs from behaviorally diverse and visually complicated demonstration videos. We introduce a summarizer module as part of our model to improve the network’s ability to integrate multiple demonstrations varying in behavior. We also employ a multi-task objective to encourage the model to learn meaningful intermediate representations for end-to-end training. We show that our model is able to reliably synthesize underlying programs as well as capture diverse behaviors exhibited in demonstrations.'
+  tags:
+    - name: 'Paper'
+      url:  'https://shaohua0116.github.io/demo2program/sun2018neural.pdf'
+    - name: 'Project Page'
+      url:  'https://shaohua0116.github.io/demo2program/'
+    - name: 'Code'
+      url:  'https://github.com/shaohua0116/demo2program'
+    - name: 'Slide'
+      url:  './images/slides/demo2program.pdf'
+    - name: 'Poster'
+      url:  './images/posters/demo2program.pdf'
+    - name: 'Bibtex'
+      url:  '/bibtex/demo2program.txt'
+  oral: false
+  oral_text: 'Short talk'
+
+- title: 'Exploiting Image Structural Similarity for Single Image Rain Removal'
+  date:  'Oct. 2014'
+  imgurl: '/images/projects/rain.png'
+  imgprop: 'frame'
+  selected: false
+  authors:
+    - name: Shao-Hua Sun
+      url:  ''
+      me: true
+    - name: Shang-Pu Fan
+      url:  '#'
+    - name: Yu-Chiang Frank Wang
+      url:  'http://vllab.ee.ntu.edu.tw/members.html'
+  publisher:  'International Conference on Image Processing (ICIP) 2014'
+  oral: false
+  status:   ''
+  # place:    'in Paris, France'
+  desc: 'Without any prior knowledge or user interaction, single image rain removal has been a challenging task. By observing the limitations of standard batch-mode learning-based methods, we propose to exploit the structural similarity of the image bases for solving this task. By formulating the basis selection as an optimization problem, we are able to disregard those associated with rain patterns while the detailed image information can be preserved. Experiments on both synthetic and real-world images will verify the effectiveness of our proposed method.'
+  tags:
+    - name: 'Paper'
+      url:  'http://mml.citi.sinica.edu.tw/papers/ICIP_2014_Sun.pdf'
+    - name: 'Bibtex'
+      url:  '/bibtex/rain.txt'
