@@ -23,15 +23,21 @@ Our proposed method DBC augments behavioral cloning (BC) by employing a diffusio
 
 
 **(a) Maze:** A point-mass agent (<span style="color:green">green</span>) in a 2D maze learns to navigate from its start location to a goal location (<span style="color:red">red</span>).
-**(b)-(c) FetchPick and FetchPush:** The robot arm manipulation tasks employ a 7-DoF Fetch robotics arm. FetchPick requires picking up an object (<span style="color:#c2c20c">yellow</span> cube) from the table and moving it to a target location (<span style="color:red">red</span>); FetchPush requires the arm to push an object (black cube) to a target location (<span style="color:red">red</span>).
-**(d) HandRotate:** This dexterous manipulation task requires a Shadow Dexterous Hand to in-hand rotate a block to a target orientation.
-**(e) Walker:** This locomotion task requires learning a bipedal walker policy to walk as fast as possible while maintaining its balance.
+**(b) FetchPick:** The robot arm manipulation
+tasks employ a 7-DoF Fetch robotics arm to pick up an object (<span style="color:#c2c20c">yellow</span> cube) from the table and move
+it to a target location (<span style="color:red">red</span>).
+**(c) HandRotate:** This dexterous manipulation task requires a Shadow
+Dexterous Hand to in-hand rotate a block to a target orientation.
+**(d)-(e) Cheetah and Walker:** These locomotion tasks require learning a 2d-dimensional agent to walk as fast as possible while
+maintaining its balance.
+**(f) AntReach:** This task combines locomotion and navigation, instructing an ant robot with four legs to reach a goal while maintaining balance.
 
 ----
 
 ## Quantitative Results
 
-We report the mean and the standard deviation of success rate (Maze, FetchPick, FetchPush, HandRotate) and return (Walker), evaluated over three random seeds. Our proposed method (DBC) outperforms the baselines on Maze, FetchPick, FetchPush, and HandRotate, and performs competitively against the best-performing baseline on Walker.
+We report the mean and the standard deviation of success rate (Maze, FetchPick, HandRotate, AntReach) and return (Cheetah, Walker), evaluated over three random seeds. Our proposed method (DBC) outperforms or performs competitively against the best
+baseline over all environments.
 
 ![](./img/quantitative_results.jpg "Comparisons to other baselines")
 
@@ -49,11 +55,10 @@ Rendered videos of the policies learned by our proposed framework (DBC) and the 
 
 ## Generalization Experiments
 
-We report the performance of our proposed framework DBC and the baselines regarding the mean and the standard deviation of the success rate with different levels of noise injected into the initial state and goal locations in FetchPick and FecthPush, evaluated over three random seeds.
+We report the performance of our proposed framework DBC and the baselines regarding the mean and the standard deviation of the success rate with different levels of noise injected into the initial state and goal locations in FetchPick, evaluated over three random seeds.
 
 ![FetchPick generalization experimental result](./img/pick.png "FetchPick generalization experimental result")
 
-![FetchPush generalization experimental result](./img/push.png "FetchPush generalization experimental result")
 
 ----
 
