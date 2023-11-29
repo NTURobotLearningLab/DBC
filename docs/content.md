@@ -23,13 +23,9 @@ Our proposed method DBC augments behavioral cloning (BC) by employing a diffusio
 
 
 **(a) Maze:** A point-mass agent (<span style="color:green">green</span>) in a 2D maze learns to navigate from its start location to a goal location (<span style="color:red">red</span>).
-**(b) FetchPick:** The robot arm manipulation
-tasks employ a 7-DoF Fetch robotics arm to pick up an object (<span style="color:#c2c20c">yellow</span> cube) from the table and move
-it to a target location (<span style="color:red">red</span>).
-**(c) HandRotate:** This dexterous manipulation task requires a Shadow
-Dexterous Hand to in-hand rotate a block to a target orientation.
-**(d)-(e) Cheetah and Walker:** These locomotion tasks require learning a 2d-dimensional agent to walk as fast as possible while
-maintaining its balance.
+**(b) FetchPick:** The robot arm manipulation tasks employ a 7-DoF Fetch robotics arm to pick up an object (<span style="color:#c2c20c">yellow</span> cube) from the table and move it to a target location (<span style="color:red">red</span>).
+**(c) HandRotate:** This dexterous manipulation task requires a Shadow Dexterous Hand to in-hand rotate a block to a target orientation.
+**(d)-(e) Cheetah and Walker:** These locomotion tasks require learning a 2d-dimensional agent to walk as fast as possible while maintaining its balance.
 **(f) AntReach:** This task combines locomotion and navigation, instructing an ant robot with four legs to reach a goal while maintaining balance.
 
 ----
