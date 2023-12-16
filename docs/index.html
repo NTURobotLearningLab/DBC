@@ -1,212 +1,174 @@
 <!DOCTYPE html>
 <html>
-  <title>Diffusion Model-Augmented Behavioral Cloning</title>
+<title>Diffusion Model-Augmented Behavioral Cloning</title>
 
-  <meta charset="UTF-8" />
-  <meta
-    property="og:title"
-    content="Diffusion Model-Augmented Behavioral Cloning"
-  />
-  <meta
-    property="og:description"
-    content="Wang et al. Diffusion Model-Augmented Behavioral Cloning"
-  />
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="" />
-  <meta property="og:type" content="website" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1 minimum-scale=1.0"
-  />
+<meta charset="UTF-8" />
+<meta property="og:title" content="Diffusion Model-Augmented Behavioral Cloning" />
+<meta property="og:description" content="Wang et al. Diffusion Model-Augmented Behavioral Cloning" />
+<meta property="og:url" content="" />
+<meta property="og:image" content="" />
+<meta property="og:type" content="website" />
+<meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1.0" />
 
-  <link rel="icon" type="image/png" href="img/favicon-32x32.png" />
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,400,500,700,900"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"
-  />
+<link rel="icon" type="image/png" href="img/favicon-32x32.png" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,400,500,700,900" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
 
-  <!-- Showdown -->
-  <script src=" https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
-  <script src="js/figure-extension.js"></script>
+<!-- Showdown -->
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+<script src="js/figure-extension.js"></script>
 
-  <!-- jQuery -->
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"
-  ></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-  <!-- WAVE -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-  />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- WAVE -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <!-- Slick -->
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-  />
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
-  />
-  <script
-    type="text/javascript"
-    src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-  ></script>
+<!-- Slick -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-  <link rel="stylesheet" href="theme.css" />
+<link rel="stylesheet" href="theme.css" />
 
-  <script>
-    const classMap = {
-      ul: "browser-default",
-    };
+<script>
+  const classMap = {
+    ul: "browser-default",
+  };
 
-    const bindings = Object.keys(classMap).map((key) => ({
-      type: "output",
-      regex: new RegExp(`<${key}(.*)>`, "g"),
-      replace: `<${key} class="${classMap[key]}" $1>`,
-    }));
+  const bindings = Object.keys(classMap).map((key) => ({
+    type: "output",
+    regex: new RegExp(`<${key}(.*)>`, "g"),
+    replace: `<${key} class="${classMap[key]}" $1>`,
+  }));
 
-    const converter = new showdown.Converter({
-      extensions: [bindings, "figure"],
+  const converter = new showdown.Converter({
+    extensions: [bindings, "figure"],
+  });
+  converter.setOption("parseImgDimensions", true);
+  converter.setOption("tables", true);
+  converter.setFlavor("github");
+
+  $("#markdown-body").ready(() => {
+    $.get("content.md", (data) => {
+      const content_html = converter.makeHtml(data);
+      $("#markdown-body").html(content_html);
     });
-    converter.setOption("parseImgDimensions", true);
-    converter.setOption("tables", true);
-    converter.setFlavor("github");
+  });
+</script>
 
-    $("#markdown-body").ready(() => {
-      $.get("content.md", (data) => {
-        const content_html = converter.makeHtml(data);
-        $("#markdown-body").html(content_html);
-      });
-    });
-  </script>
-
-  <body>
-    <!-- Header -->
-    <!-- Wide screen -->
-    <!--
+<body>
+  <!-- Header -->
+  <!-- Wide screen -->
+  <!--
         <img src="./img/NTU_RLL_logo.png" class="header-logo"> 
         -->
-    <header class="hd-container w3-container">
-      <div class="nav-container w3-small content-center">
-        <!-- <a href="https://nturobotlearninglab.github.io/"> -->
-        <a href="https://shaohua0116.github.io" class="nav-logo-container">
-          <img src="./img/NTU_RLL_logo.png" class="nav-logo" />
-        </a>
-        <!-- <a href="https://nturobotlearninglab.github.io/"> -->
-        <a href="https://shaohua0116.github.io">
-          <p class="nav-font-container">NTU Robot Learning Lab</p>
-        </a>
-      </div>
-      <div class="title">Diffusion Model-Augmented Behavioral Cloning</div>
-      <!--
+  <header class="hd-container w3-container">
+    <div class="nav-container w3-small content-center">
+      <!-- <a href="https://nturobotlearninglab.github.io/"> -->
+      <a href="https://shaohua0116.github.io" class="nav-logo-container">
+        <img src="./img/NTU_RLL_logo.png" class="nav-logo" />
+      </a>
+      <!-- <a href="https://nturobotlearninglab.github.io/"> -->
+      <a href="https://shaohua0116.github.io">
+        <p class="nav-font-container">NTU Robot Learning Lab</p>
+      </a>
+    </div>
+    <div class="title">Diffusion Model-Augmented Behavioral Cloning</div>
+    <!--
       <div class="venue">arxiv 2023</div>
       -->
-      <!-- Author -->
-      <div class="authorship-container">
-        <ul class="horizontal-list">
-          <li>
-            <a><i class="far fa-user"></i> Hsiang-Chun Wang<sup>*</sup></a>
-          </li>
-          <li>
-            <a><i class="far fa-user"></i> Shang-Fu Chen<sup>*</sup></a>
-          </li>
-          <li>
-            <a><i class="far fa-user"></i> Ming-Hao Hsu</a>
-          </li>
-          <li>
-            <a><i class="far fa-user"></i> Chun-Mao Lai</a>
-          </li>
-          <li>
-            <a href="https://shaohua0116.github.io" target="_blank"
-              ><i class="far fa-user"></i> Shao-Hua Sun</a
-            >
-          </li>
-        </ul>
-        <ul class="horizontal-list">
-          <li>
-            <a><i class="fas fa-university"></i> National Taiwan University </a>
-          </li>
-          <!-- <li><a href="" target="_blank"><i class="fas fa-university"></i> National Taiwan University </a></li> -->
-        </ul>
-      </div>
-      <div class="excerpt">
-        This work aims to augment BC by employing diffusion models for modeling
-        expert behaviors, and designing a learning objective that leverages
-        learned diffusion models to guide policy learning. To this end, we
-        propose diffusion model-augmented behavioral cloning (DBC) that combines
-        our proposed diffusion model guided learning objective with the BC
-        objective, which complements each other. Our proposed method outperforms
-        baselines or achieves competitive performance in various continuous
-        control domains, including navigation, robot arm manipulation, and
-        locomotion.
-      </div>
-    </header>
+    <!-- Author -->
+    <div class="authorship-container">
+      <ul class="horizontal-list">
+        <li>
+          <a><i class="far fa-user"></i> Hsiang-Chun Wang<sup>*</sup></a>
+        </li>
+        <li>
+          <a><i class="far fa-user"></i> Shang-Fu Chen<sup>*</sup></a>
+        </li>
+        <li>
+          <a href="https://qaz159qaz159.github.io/publications/"><i class="far fa-user"></i> Ming-Hao Hsu</a>
+        </li>
+        <li>
+          <a href="https://www.mecoli.net/publications"><i class="far fa-user"></i> Chun-Mao Lai</a>
+        </li>
+        <li>
+          <a href="https://shaohua0116.github.io" target="_blank"><i class="far fa-user"></i> Shao-Hua Sun</a>
+        </li>
+      </ul>
+      <ul class="horizontal-list">
+        <li>
+          <a><i class="fas fa-university"></i> National Taiwan University </a>
+        </li>
+        <!-- <li><a href="" target="_blank"><i class="fas fa-university"></i> National Taiwan University </a></li> -->
+      </ul>
+    </div>
+    <div class="excerpt">
+      This work aims to augment BC by employing diffusion models for modeling
+      expert behaviors, and designing a learning objective that leverages
+      learned diffusion models to guide policy learning. To this end, we
+      propose diffusion model-augmented behavioral cloning (DBC) that combines
+      our proposed diffusion model guided learning objective with the BC
+      objective, which complements each other. Our proposed method outperforms
+      baselines or achieves competitive performance in various continuous
+      control domains, including navigation, robot arm manipulation, and
+      locomotion.
+    </div>
+  </header>
 
-    <!-- Main Body -->
-    <div class="main-body">
-      <div class="w3-container">
-        <div class="w3-content" style="max-width: 1000px">
-          <!-- Links -->
-          <div class="link-container">
-            <ul class="horizontal-list">
-              <li>
-                <button
-                  class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large"
-                >
-                  <i class="fas fa-file-alt"></i>
-                  <a href="https://arxiv.org/abs/2302.13335" target="_blank">
-                    Paper
-                  </a>
-                </button>
-              </li>
-              <li>
-                <button
-                  class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large"
-                >
-                  <i class="fas fa-code"></i> Code
-                </button>
-              </li>
-            </ul>
-          </div>
-          <!-- Markdown Body -->
-          <div id="markdown-body"></div>
+  <!-- Main Body -->
+  <div class="main-body">
+    <div class="w3-container">
+      <div class="w3-content" style="max-width: 1000px">
+        <!-- Links -->
+        <div class="link-container">
+          <ul class="horizontal-list">
+            <li>
+              <button class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large">
+                <i class="fas fa-file-alt"></i>
+                <a href="https://arxiv.org/abs/2302.13335" target="_blank">
+                  Paper
+                </a>
+              </button>
+            </li>
+            <li>
+              <button class="w3-button waves-effect waves-light w3-card-4 grey lighten-2 w3-round-large">
+                <i class="fas fa-code"></i> Code
+              </button>
+            </li>
+          </ul>
         </div>
+        <!-- Markdown Body -->
+        <div id="markdown-body"></div>
       </div>
     </div>
+  </div>
 
-    <!-- Footer -->
-    <!--
+  <!-- Footer -->
+  <!--
         <footer class="footer-container content-center w3-center w3-light-grey w3-padding-32 w3-small">
         -->
-    <footer class="footer-container w3-small content-center">
-      <!-- <a href="https://nturobotlearninglab.github.io/"> -->
-      <a href="https://shaohua0116.github.io" class="footer-logo-container">
-        <img src="./img/NTU_RLL_logo.png" class="footer-logo" />
-      </a>
-      <div class="footer-font-container">
-        <p>
-          This research was supported by National Taiwan University and its
-          Department of Electrical Engineering, Graduate Institute of
-          Communication Engineering, and College of Electrical Engineering and
-          Computer Science.
-          <br />
-          Copyright &copy; 2023 by NTU Robot Learning Lab
-        </p>
-      </div>
-    </footer>
-  </body>
+  <footer class="footer-container w3-small content-center">
+    <!-- <a href="https://nturobotlearninglab.github.io/"> -->
+    <a href="https://shaohua0116.github.io" class="footer-logo-container">
+      <img src="./img/NTU_RLL_logo.png" class="footer-logo" />
+    </a>
+    <div class="footer-font-container">
+      <p>
+        This research was supported by National Taiwan University and its
+        Department of Electrical Engineering, Graduate Institute of
+        Communication Engineering, and College of Electrical Engineering and
+        Computer Science.
+        <br />
+        Copyright &copy; 2023 by NTU Robot Learning Lab
+      </p>
+    </div>
+  </footer>
+</body>
+
 </html>
