@@ -1,0 +1,28 @@
+project: 'dbc-reproduce'
+program: dbc/main.py
+method: grid
+name: Walker-dbc
+
+parameters:
+  alg:
+    value: dbc 
+  bc-num-epochs:
+    value: 1000
+  depth:
+    value: 2
+  hidden-dim:
+    value: 1024
+  coeff:
+    value:  0.2
+  ddpm-path:
+    value: data/dm/trained_models/walker_ddpm.pt
+  env-name:
+    value: Walker2d-v3 
+  lr:
+    value: 0.0001
+  traj-load-path:
+    value: ./expert_datasets/walker.pt 
+  vid-fps:
+    value: 100 
+  seed:
+    values: [1,2,3]

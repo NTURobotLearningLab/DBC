@@ -1,0 +1,1 @@
+python test.py --prefix diff-bc --use-proper-time-limits --alg diff-bc --traj-load-path ./expert_datasets/maze2d_100.pt --env-name maze2d-medium-v2 --normalize-env False  --cuda True --num-render 100  --num-eval 100 --load-file ./data/trained_models/maze2d-medium-v2/1229-m-31-U5-diff-il/model_115000.pt --eval-only --no-wb 

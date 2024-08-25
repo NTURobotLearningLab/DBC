@@ -1,3 +1,7 @@
+/wandb
 **/*.DS_Store
 _site/
 .*.sw[pon]
+*.pyc
+*.mp4
+*.png

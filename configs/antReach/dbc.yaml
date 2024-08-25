@@ -1,0 +1,36 @@
+project: "dbc-reproduce"
+program: dbc/main.py
+method: grid
+name: "Ant-dbc"
+
+parameters:
+  alg:
+    value: dbc 
+  ant-noise:
+    value: 0.01
+  bc-num-epochs:
+    value: 10000
+  depth:
+    value: 2
+  hidden-dim:
+    value: 1024
+  coeff:
+    value: 1
+  ddpm-path:
+    value: data/dm/trained_models/ant_ddpm.pt
+  env-name:
+    value: AntGoal-v0 
+  lr:
+    value: 0.006
+  seed:
+    values: [1, 2, 3] 
+  traj-load-path:
+    value: ./expert_datasets/ant.pt 
+  vid-fps:
+    value: 100
+  bc-state-norm:
+    value: False
+  il-in-action-norm:
+    value: False
+  il-out-action-norm:
+    value: False

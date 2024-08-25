@@ -1,0 +1,22 @@
+project: 'dbc-reproduce'
+program: dbc/main.py
+method: grid
+name: "HalfCheetah-bc"
+
+parameters:
+  alg:
+    value: bc 
+  bc-num-epochs:
+    value: 1000
+  depth:
+    value: 2
+  hidden-dim:
+    value: 256 
+  env-name:
+    value: HalfCheetah-v3 
+  lr:
+    value: 0.0001
+  traj-load-path:
+    value: ./expert_datasets/halfcheetah.pt 
+  seed:
+    values: [1, 2, 3]

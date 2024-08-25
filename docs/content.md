@@ -68,11 +68,13 @@ We compare using different generative models to model the expert distribution an
 
 ## Citation
 ```
-@article{wang2023diffusion,
-  title={Diffusion Model-Augmented Behavioral Cloning},
-  author={Hsiang-Chun Wang and Shang-Fu Chen and Ming-Hao Hsu and Chun-Mao Lai and Shao-Hua Sun},
-  journal={arXiv preprint arXiv:2302.13335},
-  year={2023}
+@inproceedings{
+chen2024diffusion,
+title={Diffusion Model-Augmented Behavioral Cloning},
+author={Shang-Fu Chen and Hsiang-Chun Wang and Ming-Hao Hsu and Chun-Mao Lai and Shao-Hua Sun},
+booktitle={Forty-first International Conference on Machine Learning},
+year={2024},
+url={https://openreview.net/forum?id=OnidGtOhg3}
 }
 ```
 <br>

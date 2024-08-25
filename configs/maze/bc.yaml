@@ -1,0 +1,22 @@
+project: 'dbc-reproduce'
+program: dbc/main.py
+method: grid
+name: "Maze-bc"
+
+parameters:
+  alg:
+    value: bc
+  bc-num-epochs:
+    value: 2000
+  depth:
+    value: 3 
+  hidden-dim:
+    value: 256
+  env-name:
+    value: maze2d-medium-v2 
+  lr:
+    value: 0.00005 
+  traj-load-path:
+    value: ./expert_datasets/maze.pt 
+  seed:
+    values: [1,2,3]

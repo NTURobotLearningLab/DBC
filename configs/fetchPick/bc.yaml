@@ -1,0 +1,29 @@
+project: 'dbc-reproduce'
+program: dbc/main.py
+method: grid
+name: Pick-bc
+
+parameters:
+  alg:
+    value: bc 
+  bc-num-epochs:
+    value: 5000 
+  depth:
+    value: 2 
+  hidden-dim:
+    value: 750 
+  env-name:
+    value: FetchPickAndPlaceDiffHoldout-v0 
+  lr:
+    value: 0.000005
+  traj-load-path:
+    value: ./expert_datasets/pick.pt 
+  vid-fps:
+    value: 100 
+  goal-noise-ratio:
+    value: 1.25 
+  noise-ratio:
+    value: 1.25 
+  seed:
+    values: [1, 2, 3]  
+  
