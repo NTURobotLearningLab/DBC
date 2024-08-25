@@ -48,7 +48,10 @@ We specify how to train diffusion models and the location of configuration files
 
 - Ours:
     1. DM pretraining: ` python dbc/ddpm.py --traj-load-path expert_datasets/maze.pt --num-epoch 8000 --lr 0.0001 --hidden-dim 128`
-    2. Policy learning: `./wandb.sh ./configs/maze/dbc.yaml`
+    2. Policy learning:
+        - single experiment: `python dbc/main.py --alg dbc --bc-num-epochs 2000 --depth 3 --hidden-dim 256 --coeff 30 --coeff-bc 1 --ddpm-path data/dm/trained_models/maze_ddpm.pt --env-name maze2d-medium-v2 --lr 0.00005 --traj-load-path ./expert_datasets/maze.pt --seed 1`
+        - To run a single experiment on other environments, please refer to the configuration files to see the parameters for each environment.
+        - wandb sweep: `./wandb.sh ./configs/maze/dbc.yaml`
 - BC: `./wandb.sh ./configs/maze/bc.yaml`
 
 ### Fetch Pick
@@ -108,11 +111,11 @@ We specify how to train diffusion models and the location of configuration files
 
 ```
 @inproceedings{
-chen2024diffusion,
-title={Diffusion Model-Augmented Behavioral Cloning},
-author={Shang-Fu Chen and Hsiang-Chun Wang and Ming-Hao Hsu and Chun-Mao Lai and Shao-Hua Sun},
-booktitle={Forty-first International Conference on Machine Learning},
-year={2024},
-url={https://openreview.net/forum?id=OnidGtOhg3}
+    chen2024diffusion,
+    title={Diffusion Model-Augmented Behavioral Cloning},
+    author={Shang-Fu Chen and Hsiang-Chun Wang and Ming-Hao Hsu and Chun-Mao Lai and Shao-Hua Sun},
+    booktitle={Forty-first International Conference on Machine Learning},
+    year={2024},
+    url={https://openreview.net/forum?id=OnidGtOhg3}
 }
 ```
