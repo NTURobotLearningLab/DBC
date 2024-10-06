@@ -6,9 +6,9 @@
 [Chun-Mao Lai](https://www.mecoli.net/),
 [Shao-Hua Sun](https://shaohua0116.github.io) at [NTU RLL lab](https://nturll.xyz/about)
 
-[[Project website]](https://nturobotlearninglab.github.io/dbc/) [[Paper]](https://arxiv.org/abs/2302.13335)
+[[Project website]](https://nturobotlearninglab.github.io/DBC/) [[Paper]](https://arxiv.org/abs/2302.13335)
 
-This is the official PyTorch implementation of the paper ["Diffusion Model-Augmented Behavioral Cloning"](https://nturobotlearninglab.github.io/dbc/) (ICML2024).
+This is the official PyTorch implementation of the paper ["Diffusion Model-Augmented Behavioral Cloning"](https://nturobotlearninglab.github.io/DBC/) (ICML2024).
 
 ![image](docs/img/framework.jpeg)
 
