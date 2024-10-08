@@ -28,14 +28,11 @@ pip install -e .
 cd ../rl-toolkit
 pip install -e .
 
+cd ..
 mkdir -p data/trained_models
 ```
 
 2. Setup [Weights and Biases](https://wandb.ai/site) by first logging in with `wandb login <YOUR_API_KEY>` and then editing `config.yaml` with your W&B username and project name.
-
-```
-python download_demos.py
-```
 
 ## How to reproduce experiments
 - For diffusion model pretraining, run `dbc/ddpm.py`.
